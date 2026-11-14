@@ -1,0 +1,1 @@
+"""namecage package."""

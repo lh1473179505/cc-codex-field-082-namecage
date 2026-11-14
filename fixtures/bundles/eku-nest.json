@@ -1,0 +1,138 @@
+{
+  "now": 1700000000,
+  "hostname": "www.shop.example.com",
+  "trust_anchors": [
+    "root"
+  ],
+  "leaf_id": "leaf",
+  "certs": [
+    {
+      "id": "leaf",
+      "tbs": {
+        "serial": "10",
+        "subject": "cn=www.shop.example.com,o=Shop,c=US",
+        "issuer": "cn=Shop SubCA,o=Shop,c=US",
+        "not_before": 1699913600,
+        "not_after": 1707776000,
+        "ski": "leaf-key",
+        "aki": "sub-key",
+        "basic_constraints": {
+          "ca": false
+        },
+        "key_usage": [
+          "digitalSignature",
+          "keyEncipherment"
+        ],
+        "eku": [
+          "serverAuth"
+        ],
+        "san": {
+          "dns": [
+            "www.shop.example.com"
+          ]
+        },
+        "name_constraints": {},
+        "certificate_policies": [
+          "1.3.6.1.4.1.9999.1"
+        ],
+        "policy_constraints": {},
+        "inhibit_any_policy": null,
+        "critical": [
+          "basic_constraints",
+          "key_usage",
+          "san"
+        ]
+      },
+      "sig": {
+        "key_id": "sub-key",
+        "mac": "8e56dbc261c36c4b34d4632d423d6fd4a7a7c3096d4adf6b689045c454950f32"
+      }
+    },
+    {
+      "id": "sub",
+      "tbs": {
+        "serial": "2",
+        "subject": "cn=Shop SubCA,o=Shop,c=US",
+        "issuer": "cn=Lab Root,o=Lab,c=US",
+        "not_before": 1699913600,
+        "not_after": 1731536000,
+        "ski": "sub-key",
+        "aki": "root-key",
+        "basic_constraints": {
+          "ca": true,
+          "path_len": 1
+        },
+        "key_usage": [
+          "keyCertSign",
+          "cRLSign"
+        ],
+        "eku": [
+          "clientAuth"
+        ],
+        "san": {},
+        "name_constraints": {
+          "permitted": {
+            "dns": [
+              "example.com"
+            ]
+          }
+        },
+        "certificate_policies": [
+          "1.3.6.1.4.1.9999.1"
+        ],
+        "policy_constraints": {},
+        "inhibit_any_policy": null,
+        "critical": [
+          "basic_constraints",
+          "key_usage",
+          "name_constraints"
+        ]
+      },
+      "sig": {
+        "key_id": "root-key",
+        "mac": "b86ef6fe12aed1c62ce07de38f6e2205fe1ef5a832818e08ddd6b0a66ce2da3f"
+      }
+    },
+    {
+      "id": "root",
+      "tbs": {
+        "serial": "1",
+        "subject": "cn=Lab Root,o=Lab,c=US",
+        "issuer": "cn=Lab Root,o=Lab,c=US",
+        "not_before": 1699913600,
+        "not_after": 1731536000,
+        "ski": "root-key",
+        "aki": "root-key",
+        "basic_constraints": {
+          "ca": true,
+          "path_len": 3
+        },
+        "key_usage": [
+          "keyCertSign",
+          "cRLSign"
+        ],
+        "eku": [
+          "anyExtendedKeyUsage"
+        ],
+        "san": {},
+        "name_constraints": {},
+        "certificate_policies": [
+          "2.5.29.32.0"
+        ],
+        "policy_constraints": {
+          "require_explicit_policy": 0
+        },
+        "inhibit_any_policy": null,
+        "critical": [
+          "basic_constraints",
+          "key_usage",
+          "policy_constraints"
+        ]
+      },
+      "sig": {
+        "key_id": "root-key",
+        "mac": "c509229d492ecc0596f7e2dd8dd62c1a7709615f018dad99c0c73a7b975fa6f1"
+      }
+    }
+  ]
+}
